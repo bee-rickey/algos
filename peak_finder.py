@@ -61,6 +61,9 @@ def compute_2d_maxima(input_array, i, j):
   middle_column = int((i + j)/2)
   middle_column_values = []
 
+  if middle_column == 0:
+    return
+
   for row in input_array:
     middle_column_values.append(row[middle_column])
 
