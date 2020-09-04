@@ -1,3 +1,8 @@
+'''
+Peak finder is a simple algorithm that finds a local/global maxima in a list. 
+This can be used for identifying specific pixes that are darker/lighter in an image. 
+'''
+
 def main():
   input_array = [3, 2, 21, 25, 5, 7, 1]
 
@@ -48,7 +53,7 @@ def twoD_peak():
   input_array.append([5, 6, 7, 2, 9, 1])
   input_array.append([5, 6, 7, 1, 2, 1])
 
-  
+  ''' Divide and conquer based on columns and then find global maxima for each column '''
   compute_2d_maxima(input_array, 0, len(input_array[0]))
 
 def compute_2d_maxima(input_array, i, j):

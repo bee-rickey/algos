@@ -1,4 +1,8 @@
-
+''' 
+The logic of document distance is to find out how similar two documents are. 
+The approach is to build a word frequency dictionary for the documents. Then, do a dot product of the two dictionaries.
+This is similar to doing vector multiplication to find out if the two vectors are the same. This allows for documents to be compared the way vectors are compared.
+'''
 def main():
   first_dict = {}
   second_dict = {}
