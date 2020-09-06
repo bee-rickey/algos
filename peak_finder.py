@@ -39,9 +39,9 @@ def divide_and_conquer(input_array, i, j):
     print(f"Local maxima {input_array[m]}") 
     return
   elif input_array[m + 1] > input_array[m]:
-    divide_and_conquer(input_array, m, j)
-  else: # input_array[m - 1] > input_array[m]:
-    divide_and_conquer(input_array, i, m - 1)
+    return divide_and_conquer(input_array, m, j)
+  elif input_array[m - 1] > input_array[m]:
+    return divide_and_conquer(input_array, i, m - 1)
 
 
 def twoD_peak():
@@ -49,7 +49,7 @@ def twoD_peak():
   input_array.append([5, 6, 7, 0, 2, 1])
   input_array.append([5, 6, 7, 0, 3, 1])
   input_array.append([5, 6, 0, 4, 2, 1])
-  input_array.append([5, 7, 7, 0, 2, 1])
+  input_array.append([5, 7, 17, 9, 2, 1])
   input_array.append([5, 6, 7, 2, 9, 1])
   input_array.append([5, 6, 7, 1, 2, 1])
 
@@ -77,8 +77,8 @@ def compute_2d_maxima(input_array, i, j):
     print("2D Maxima: i: {}, j: {}, v: {}".format(index_of_column_maxima, middle_column, column_maxima))
     return
   elif input_array[index_of_column_maxima][middle_column - 1] > column_maxima:
-    compute_2d_maxima(input_array, i, middle_column - 1)
-  else: # input_array[index_of_column_maxima][middle_column + 1] > column_maxima:
-    compute_2d_maxima(input_array, middle_column + 1, j)
+    return compute_2d_maxima(input_array, i, middle_column - 1)
+  elif input_array[index_of_column_maxima][middle_column + 1] > column_maxima:
+    return compute_2d_maxima(input_array, middle_column + 1, j)
 
 main()
